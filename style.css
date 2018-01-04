@@ -1,0 +1,172 @@
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+[class^='step-'],
+[class*='step-'] {
+	display: none;
+}
+
+[class^='step-'].currentStep,
+[class*='step-'].currentStep {
+	display: block;
+}
+
+.flex {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+}
+
+body {
+	margin: 0;
+	background-color: #ffffec;
+	font-family: 'Courier', 'Courier New', 'Arvo', serif;
+	font-size: 18px;
+	line-height: 1.5;
+}
+
+h1 {
+	text-align: center;
+	padding: 0 1em;
+}
+
+#app {
+	width: 95%;
+	max-width: 800px;
+	padding: 2em;
+	margin: auto;
+	text-align: center;
+	background-color: #f2d488;
+}
+
+#result ul li {
+	list-style: none;
+	text-align: left;
+	align-items: center;
+}
+
+#result li img {
+	width: 100px;
+	height: 100px;
+	padding: 10px;
+	margin-right: 10px;
+	border: 3px solid #e2a54d;
+	background-color: #fee5a4;
+	border-radius: 50%;
+}
+
+.container {
+	width: 600px;
+    margin: auto;
+}
+
+input[type="radio"] {
+	position: absolute;
+	left: -9999em;
+}
+
+input[type="submit"] {
+	display: block;
+	width: 220px;
+	margin: 2em auto;
+	cursor: pointer;
+
+	font-family: 'Courier', 'Courier New', 'Arvo', serif;
+	font-size: 16px;
+	color: #000;
+    background-color: transparent;
+    box-sizing: border-box;
+    padding: 1em;
+    border: 1px solid #e2a54d;
+
+    transition: background-color 0.5s ease;
+}
+
+input[type="submit"]:hover, 
+input[type="submit"]:focus, 
+input[type="submit"]:active {
+	background-color: #e2a54d;
+}
+
+label {
+	display: inline-block;
+	position: relative;
+	width: 50%;
+	margin: auto;
+
+	cursor: pointer;
+}
+
+
+label:before {
+	content: '';
+	display: block;
+	height: 200px;
+	width: 200px;
+	margin: auto;
+	border: 3px solid #f2d488;
+	border-radius: 50%;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-size: 150px 150px;
+	background-position: center;
+	
+	transition: border 0.2s ease;
+	transition: background-color 0.5s ease;
+}
+
+label:hover:before {
+	border: 3px solid #e2a54d;
+	background-color: #fee5a4;
+	border-radius: 50%;
+}
+
+input[type="radio"]:checked + label:before {
+	content: '';
+	border: 3px solid #e2a54d;
+	background-color: #fee5a4;
+	border-radius: 50%;
+}
+
+#lg-budget:before {
+	background-image: url('icons/lg-budget.svg');
+}
+
+#sm-budget:before {
+	background-image: url('icons/sm-budget.svg');
+}
+
+#rwd-friendly:before {
+	background-image: url('icons/rwd.svg');
+}
+
+#rwd-unfriendly:before {
+	background-image: url('icons/rwd-desktop.svg');
+}
+
+#brand-on:before {
+	background-image: url('icons/onbrand.svg');
+}
+
+#brand-off:before {
+	background-image: url('icons/offbrand.svg');
+}
+
+#rev-yes:before {
+	background-image: url('icons/rev-yes.svg');
+}
+
+#rev-none:before {
+	background-image: url('icons/rev-no.svg');
+}
+
+
+
+
